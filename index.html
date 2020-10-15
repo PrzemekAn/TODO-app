@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class = 'sidebar'>
+            <div class="logo">TODO APP</div>
+            <div class="features">
+                <!-- <div class="feature disharder"><i class="fas fa-th-large"></i>Disharder</div> -->
+                <div class="feature goals"><i class="fas fa-crosshairs"></i>Goals</div>
+                <!-- <div class="feature friends"><i class="fas fa-user-friends"></i>Friends</div> -->
+                <!-- <div class="feature timing"><i class="fas fa-stopwatch"></i>Timing</div> -->
+                <!-- <div class="feature notifications"><i class="far fa-bell"></i>Notifications</div> -->
+            </div>
+            <div class="settings"><i class="fas fa-cog"></i>Settings</div>
+        </div>
+        <div class = 'tasks' >
+            <p class = 'section-name'>My tasks</p>
+            <button class="addTaskBtn">+New</button>
+            <div class="tasks-completion"></div>  <!--tutaj bedzie progres--> 
+            <div class="tasks-container"></div> <!--tutaj beda dodawane zadania-->
+        </div>
+        <div class = 'tasks-details'>
+            <h2 class="tasks-details-header">Cokolwiek narazie</h2>
+            <h1 class="task-details-header">Tytuł zadania do zrobienia asdas asdasd  asdasfasf asdasd aasdasd </h1>
+            <p class="deadline">Deadline: <span class = 'deadline-date'>31/12/2020</span></p>
+            <p class="task-details">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia dolorem, nobis repellendus voluptates quidem accusantium ad iusto delectus numquam ipsam sit officiis obcaecati laborum aspernatur facere molestias quisquam reiciendis? Facere.Doloribus exercitationem laboriosam, consequuntur cupiditate aut at ipsam laborum ex quaerat, optio mollitia nemo provident aspernatur illum iure dolores unde incidunt a quis nesciunt, reiciendis maxime voluptates? Optio, alias repudiandae!</p>
+            <div class="steps">
+                <h4 class = 'steps-header'>Milestones</h2>
+                <div class="milestones">
+                    <div class="milestone"><i class="fas fa-check check-circle"></i><p class="milestone-text">Kamień 1</p></div>
+                    <div class="milestone"><i class="fas fa-check check-circle"></i><p class="milestone-text">Kamień 1</p></div>
+                    <div class="milestone"><i class="fas fa-check check-circle"></i><p class="milestone-text">Kamień 1</p></div>
+                    <div class="milestone"><i class="fas fa-check check-circle"></i><p class="milestone-text">Kamień 1</p></div>
+                </div>
+            </div>
+        </div>
+        <div class = 'personal-informations'></div>
+    </div>
+    <script src = 'script.js'></script>
+</body>
+</html>
