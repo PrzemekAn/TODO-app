@@ -231,6 +231,30 @@
     font-size: 14px;
 }
 
+.deleteTaskButton {
+    position: absolute;
+    top: 50%;
+    right: 3%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    text-align: center;
+    line-height: 28px;
+    font-weight: 500;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.deleteTaskButton:hover {
+    background-color: red;
+}
+
+.deleteTaskButton::selection {
+    background: transparent;
+}
+
 /* ---------------------- */
 
 /* scrollbar in tasks container */
@@ -248,8 +272,9 @@
 
 
 .tasks-container::-webkit-scrollbar-thumb {
-    background: #0091ff;
-    box-shadow: 0 0 1px white;
+    /* background: #0091ff; */
+    background: white;
+    /* box-shadow: 0 0 3px white; */
     border-radius: 20px;
 }
 

@@ -21,21 +21,24 @@ checkCircles.forEach(checkCircle =>{
     })
 })
 
-function loadDisharder(){}
+// function loadDisharder(){}
 
-function loadGoals(){}
+// function loadGoals(){}
 
-function loadFriends(){}
+// function loadFriends(){}
 
-function loadTiming(){}
+// function loadTiming(){}
 
-function loadNotifications(){}
+// function loadNotifications(){}
 
 // adding new tasks -------------------------------
 const tasksContainer = document.querySelector('.tasks-container');
 const newTaskButton = document.querySelector('.addTaskBtn');
+const tasks = [];
 
 newTaskButton.addEventListener('click',()=>{
+
+    // tworzenie formularza tworzenia zadania
     const newTaskPopup = document.createElement('div');
     newTaskPopup.classList.add('newTaskPopup');
     document.querySelector('body').appendChild(newTaskPopup);
@@ -44,8 +47,7 @@ newTaskButton.addEventListener('click',()=>{
     exitButton.textContent = "x";
     newTaskPopup.appendChild(exitButton);
 
-
-    // tworzenie formularza tworzenia zadania
+    
     const newTaskPopupHeaderContainer = document.createElement('div');
     newTaskPopupHeaderContainer.classList.add('newTaskPopupHeaderContainer');
     newTaskPopup.appendChild(newTaskPopupHeaderContainer);
@@ -71,6 +73,7 @@ newTaskButton.addEventListener('click',()=>{
     newTaskPopupShortcutContainer.appendChild(taskShortcut);
     newTaskPopupShortcutContainer.appendChild(taskShortcutLabel);
 
+
     const newTaskDatePopupContainer = document.createElement('div');
     newTaskDatePopupContainer.classList.add('newTaskDatePopupContainer')
     newTaskPopup.appendChild(newTaskDatePopupContainer);
@@ -88,7 +91,16 @@ newTaskButton.addEventListener('click',()=>{
     submitBtn.textContent = 'Add task';
     newTaskPopup.appendChild(submitBtn);
 
+    exitButton.addEventListener('click',()=>{
+        newTaskPopup.remove();
+    })
+
+    
+
+    // nowe zadania
+
     submitBtn.addEventListener('click',(e)=>{
+        
         // e.preventDefault;
         const divEl = document.createElement('div');
         divEl.classList.add('task');
@@ -109,13 +121,33 @@ newTaskButton.addEventListener('click',()=>{
         dataEl.textContent = taskDate.value;
         divEl.appendChild(dataEl);
 
+        const deleteTaskButtons = document.createElement('div');
+        deleteTaskButtons.classList.add('deleteTaskButton');
+        deleteTaskButtons.textContent = 'x';
+        divEl.appendChild(deleteTaskButtons);
+
+        // tworzenie obiektow i dodawanie do nich wartosci w inputow 
+        // dodać zwiększanie indeksu o 1 i nadawać to jako id dla każdego obiektu (możliwość wyboru)
+        const taskObj = {
+            name: taskName.value,
+            shortcut: taskShortcut.value,
+            date: taskDate.value
+        }
+
+        tasks.push(taskObj);
+
+        taskName.value = '';
+        taskShortcut.value = '';
+        taskDate.value = '';
+
+        deleteTaskButtons.addEventListener('click',(e)=>{
+            e.target.parentNode.remove();
+        })
+        
+
     })
 
-
-
-    exitButton.addEventListener('click',()=>{
-        newTaskPopup.remove();
-    })
+    
 })
 
 
