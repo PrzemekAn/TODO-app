@@ -1,4 +1,9 @@
 const features = document.querySelectorAll('.feature');
+const tasksDetails = document.querySelector('.tasks-details');
+const tasksDetailsHeader = document.querySelector('.tasks-details-header');
+const taskDetailsHeader = document.querySelector('.task-details-header');
+const deadline = document.querySelector('.deadline');
+const taskDetails = document.querySelector('.task-details');
 
 function removeSelection(){
     features.forEach((feature)=>{
@@ -35,6 +40,7 @@ checkCircles.forEach(checkCircle =>{
 const tasksContainer = document.querySelector('.tasks-container');
 const newTaskButton = document.querySelector('.addTaskBtn');
 const tasks = [];
+let idx = 0;
 
 newTaskButton.addEventListener('click',()=>{
 
@@ -104,6 +110,7 @@ newTaskButton.addEventListener('click',()=>{
         // e.preventDefault;
         const divEl = document.createElement('div');
         divEl.classList.add('task');
+        divEl.setAttribute('id', `${idx}`)
         tasksContainer.appendChild(divEl);
 
         const headerEl = document.createElement('h2');
@@ -126,7 +133,7 @@ newTaskButton.addEventListener('click',()=>{
         deleteTaskButtons.textContent = 'x';
         divEl.appendChild(deleteTaskButtons);
 
-        // tworzenie obiektow i dodawanie do nich wartosci w inputow 
+        // tworzenie obiektow i dodawanie do nich wartosci z inputow 
         // dodać zwiększanie indeksu o 1 i nadawać to jako id dla każdego obiektu (możliwość wyboru)
         const taskObj = {
             name: taskName.value,
@@ -142,12 +149,19 @@ newTaskButton.addEventListener('click',()=>{
 
         deleteTaskButtons.addEventListener('click',(e)=>{
             e.target.parentNode.remove();
+            idx--;
         })
+
+        // otwieranie szczegolow zadania
+        divEl.addEventListener('click',()=>{
+            taskDetailsHeader.textContent = taskObj.name;
+            deadline.textContent = taskObj.date;
+            taskDetails.textContent = taskObj.shortcut;
+        })
+        console.log(idx);
+        idx++;
         
-
-    })
-
-    
+    }) 
 })
 
 
@@ -155,3 +169,7 @@ newTaskButton.addEventListener('click',()=>{
 
 
 // --------------------------------------------------------
+
+// otwieranie szczegolow zadania
+
+

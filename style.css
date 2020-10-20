@@ -204,6 +204,11 @@
     border-bottom: 1px solid rgba(255, 255, 255, .7);
     color: white;
     position: relative;
+    cursor: default;
+}
+
+.task:hover {
+    background-color: #6ab6f0;
 }
 
 .task-header {
@@ -221,7 +226,8 @@
     max-height: 25%;
     overflow: hidden;
     text-align: justify;
-    padding-right: 20px;
+    padding-right: 60px;
+
 }
 
 .date {
