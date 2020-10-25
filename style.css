@@ -217,6 +217,7 @@
     font-weight: 500;
     margin: 5% 0;
     width: 70%;
+    padding-left: 10px;
 
 }
 
@@ -227,6 +228,7 @@
     overflow: hidden;
     text-align: justify;
     padding-right: 60px;
+    padding-left: 10px;
 
 }
 
@@ -295,6 +297,7 @@
     height: 100%;
     width: 41%;
     position: relative;
+    overflow: hidden;
 }
 
 .tasks-details-header {
@@ -334,6 +337,8 @@
     left: 3%;
     width: 90%;
     color: #969696;
+    height: 18%;
+    overflow: hidden;
 }
 
 .steps {
@@ -390,4 +395,59 @@
     height: 100%;
     width: 21%;
     background-image: linear-gradient(to bottom, rgb(253, 253, 253), rgb(248, 239, 221));
+    position: relative;
+}
+
+.user-info {
+    width: 80%;
+    /* height: 20vh; */
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    border-bottom: 1px solid lightgray;
+
+    /* background-color: blue; */
+}
+
+.user-info img {
+    display: block;
+    margin: 0 auto;
+    height: 120px;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.user-info-header {
+    text-align: center;
+    margin: 15px 0;
+}
+
+.job-position-info {
+    text-align: center;
+}
+
+.profile-button {
+    display: block;
+    width: 80px;
+    height: 30px;
+    margin: 25px auto;
+    background-color: royalblue;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    box-shadow: 0 0 2px black;
+    cursor: pointer;
+}
+
+
+
+.goal-progress {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    font-weight: 500;
 }

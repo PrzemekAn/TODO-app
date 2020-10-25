@@ -149,18 +149,23 @@ newTaskButton.addEventListener('click',()=>{
 
         deleteTaskButtons.addEventListener('click',(e)=>{
             e.target.parentNode.remove();
+            deleteTaskButtons.parentNode.removeEventListener('click',showTask);
             idx--;
         })
+        
+        divEl.addEventListener('mouseover',()=>{
+            divEl.addEventListener('click',showTask);
+        })
 
-        // otwieranie szczegolow zadania
-        divEl.addEventListener('click',()=>{
+        function showTask(){
             taskDetailsHeader.textContent = taskObj.name;
             deadline.textContent = taskObj.date;
             taskDetails.textContent = taskObj.shortcut;
-        })
+        }
+        // otwieranie szczegolow zadania
+        divEl.addEventListener('click',showTask)
         console.log(idx);
         idx++;
-        
     }) 
 })
 
